@@ -7,7 +7,7 @@ Felipe Cle - 42116082
 Matheus - 42130727
 
 ```
-**tURMA 04N11**
+**Turma 04N11**
 
 > Exercícios em C.
 
