@@ -1,49 +1,34 @@
 #include <stdio.h>
 
-#define lin 2
-#define col 3
-
-void multL(int m[lin][col], int lin, int n) {
-    for (int j=0 ;j<col ;j++) {
-        m[lin][j] *= n;
+int main()
+{
+    int matriz[3][3] = { {1, 5, 1},  // MATRIZ TESTE
+                    {8, 7, 3},
+                    {9, 8, 0},
+                    };
+                    
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        printf("%d ", matriz[i][j]);
+        printf("\n");
     }
-}
-
-void multCol(int m[lin][col], int col, int n) {
-    for (int i=0 ;i<lin ;i++) {
-        m[i][col] *= n;
-    }
-}
-
-int main() {
-    int m[lin][col] = {{1, 2, 3},
-                              {4, 5, 6},
-                              {7, 8, 9}};
-
-    printf("Matriz original:\n");
-    for (int i=0 ;i<lin ;i++) {
-        for (int j = 0; j < col; j++) {
-            printf("%d \n", m[i][j]);
-          }
-      }
-  
-    multL(m, 2, 4);
-
-    printf("\nNova matriz com linha:\n");
-    for (int i=0 ;i<lin ;i++) {
-        for (int j=0 ;j<col ;j++) {
-            printf("%d \n", m[i][j]);
+    int numero;
+    printf("Digite o numero para multiplicar:");
+    scanf("%d",&numero);
+    
+    for(int i=0;i<3;i++){
+        for (int j=0;j<3;j++){
+        matriz[i][j]=matriz[i][j]*numero;
+        
+            
         }
     }
-
-    multCol(m, 0, 3);
-
-    printf("\nNova matriz com coluna:\n");
-    for (int i=0 ;i<lin ;i++) {
-        for (int j=0 ;j<col ;j++) {
-            printf("%d \n", m[i][j]);
-        }
+     for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        printf("%d ", matriz[i][j]);
+        printf("\n");
     }
-
-    return 0;
+ 
 }
