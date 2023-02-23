@@ -1,6 +1,6 @@
-<h1 align="center"> Laboratório 01</h1>
+<h1 align="center"> Sistemas Operacionais - 04N11</h1>
 
-> Hello World em C
+> Repositório para as atividades de laboratório da disciplina.
 
 Membros do Grupo:
 
