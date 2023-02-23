@@ -1,5 +1,14 @@
 <h1 align="center"> Exercícios Lab01b</h1>
 
+**Nome dos Integrantes do Grupo:**
+```
+Victor Junqueira - 42123712
+Felipe Cle - 
+Matheus - 
+
+```
+**tURMA 04N11**
+
 > Exercícios em C.
 
 
