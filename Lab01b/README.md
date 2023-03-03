@@ -22,7 +22,7 @@ Utilizando o GCC, devemos utilizar o comando no terminal : gcc exercicio1.c -o e
 **Como executar o programa:**
 
 ```
-Após compilar , devemos inserir o arquivo a ser executado no terminal :  exercicio1.out
+Após compilar , devemos inserir o arquivo a ser executado no terminal :  ./exercicio1.out
 
 ```
 
