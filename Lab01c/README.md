@@ -36,7 +36,7 @@ Quantas chamadas de sistemas foram realizadas?**
 
 ```
 
-Existem duas chamadas de sistema ao SO no programa:
+Existem quatro chamadas de sistema ao SO no programa:
 
 Linha 9: in_file = fopen(argv[1], "r"); - esta chamada de sistema abre um arquivo para leitura.
 Linha 15: out_file = fopen(argv[2], "w"); - esta chamada de sistema abre um arquivo para escrita.
