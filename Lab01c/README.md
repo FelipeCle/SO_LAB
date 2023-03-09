@@ -23,7 +23,10 @@ Utilizando o GCC, devemos utilizar o comando no terminal : gcc exercicio1.c -o e
 Quantas chamadas de sistemas foram realizadas?**
 
 ```
+Existem duas chamadas de sistema ao SO no programa:
 
+Linha 8: A chamada de sistema é feita pela função fopen() que é usada para abrir um arquivo para leitura. Esta chamada recebe dois argumentos, o nome do arquivo e o modo de abertura.
+Linha 14: A chamada de sistema é feita pela função fclose() que é usada para fechar o arquivo aberto anteriormente. Esta chamada recebe um argumento que é o ponteiro para o arquivo aberto.
 
 ```
 **2) Identifique no seu programa as linhas de comando onde ocorrem chamadas de sistemas ao SO. 
@@ -31,4 +34,7 @@ Quantas chamadas de sistemas foram realizadas?**
 
 ```
 
+Existem duas chamadas de sistema ao SO no programa:
 
+Linha 10: in_file = fopen(argv[1], "r"); - esta chamada de sistema abre um arquivo para leitura.
+Linha 13: out_file = fopen(argv[2], "w"); - esta chamada de sistema abre um arquivo para escrita.
