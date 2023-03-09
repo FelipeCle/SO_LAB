@@ -27,7 +27,7 @@ Existem duas chamadas de sistema ao SO no programa:
 
 Linha 8: A chamada de sistema é feita pela função fopen() que é usada para abrir um arquivo para leitura. 
 Esta chamada recebe dois argumentos, o nome do arquivo e o modo de abertura.
-Linha 14: A chamada de sistema é feita pela função fclose() que é usada para fechar o arquivo aberto anteriormente. 
+Linha 19: A chamada de sistema é feita pela função fclose() que é usada para fechar o arquivo aberto anteriormente. 
 Esta chamada recebe um argumento que é o ponteiro para o arquivo aberto.
 
 ```
@@ -38,5 +38,7 @@ Quantas chamadas de sistemas foram realizadas?**
 
 Existem duas chamadas de sistema ao SO no programa:
 
-Linha 10: in_file = fopen(argv[1], "r"); - esta chamada de sistema abre um arquivo para leitura.
-Linha 13: out_file = fopen(argv[2], "w"); - esta chamada de sistema abre um arquivo para escrita.
+Linha 9: in_file = fopen(argv[1], "r"); - esta chamada de sistema abre um arquivo para leitura.
+Linha 15: out_file = fopen(argv[2], "w"); - esta chamada de sistema abre um arquivo para escrita.
+Linha 25: fclose(in_file); - esta chamada de sistema fecha o arquivo aberto anteriormente.
+Linha 26: fclose(out_file); - esta chamada de sistema fecha o arquivo aberto anteriormente.
