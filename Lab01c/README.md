@@ -25,8 +25,10 @@ Quantas chamadas de sistemas foram realizadas?**
 ```
 Existem duas chamadas de sistema ao SO no programa:
 
-Linha 8: A chamada de sistema é feita pela função fopen() que é usada para abrir um arquivo para leitura. Esta chamada recebe dois argumentos, o nome do arquivo e o modo de abertura.
-Linha 14: A chamada de sistema é feita pela função fclose() que é usada para fechar o arquivo aberto anteriormente. Esta chamada recebe um argumento que é o ponteiro para o arquivo aberto.
+Linha 8: A chamada de sistema é feita pela função fopen() que é usada para abrir um arquivo para leitura. 
+Esta chamada recebe dois argumentos, o nome do arquivo e o modo de abertura.
+Linha 14: A chamada de sistema é feita pela função fclose() que é usada para fechar o arquivo aberto anteriormente. 
+Esta chamada recebe um argumento que é o ponteiro para o arquivo aberto.
 
 ```
 **2) Identifique no seu programa as linhas de comando onde ocorrem chamadas de sistemas ao SO. 
