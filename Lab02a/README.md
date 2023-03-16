@@ -24,7 +24,7 @@ Utilizando o GCC, devemos utilizar o comando no terminal : gcc [NomeDoArquivo].c
 **1) 1 Rode o programa anterior para valores grandes de n. As mensagens sempre estarão ordenadas pelo valor de i?**
 
 ```
-Ao rodar o programa anterior utilizando o stderr como streaming de saída, as mensagens sempre estarão ordenadas pelo valor de "i", mesmo para valores grandes de "n". Isso pode ser confirmado executando o programa para n = 100.
+Ao rodar o programa anterior utilizando o stderr como streaming de saída, as mensagens sempre estarão ordenadas pelo valor de "i", mesmo para valores grandes de "n". Isso pode ser confirmado executando o programa para n = 10000.
 
 ```
 **2) O que acontece se o programa anterior escreve-se as mensagens
