@@ -29,5 +29,5 @@ Sim , para testes com valores de N grande como 20,50,100,1000 as mensagens sempr
 para sys.stdout, usando print, ao invés de para sys.stderr?**
 
 ```
-Caso o programa seja executado deste forma , como no nosso código "stdout" , para valores suficientemente grandes de N , os valores de i nem sempre permanecem ordenados.
+Caso o programa seja executado desta forma , como no nosso código "stdout" , para valores suficientemente grandes de N , os valores de i nem sempre permanecem ordenados.
 
