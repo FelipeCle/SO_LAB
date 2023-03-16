@@ -1,4 +1,4 @@
-<h1 align="center"> Exercícios Lab01b</h1>
+<h1 align="center"> Exercícios Lab02a</h1>
 
 **Nome dos Integrantes do Grupo:**
 ```
