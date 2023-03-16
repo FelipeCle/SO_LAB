@@ -19,6 +19,8 @@ Utilizando o GCC, devemos utilizar o comando no terminal : gcc [NomeDoArquivo].c
 
 ```
 
+>Exemplos das execuções realizadas para estes programas se encontram nos arquivos ".txt"
+
 **1) 1 Rode o programa anterior para valores grandes de n. As mensagens sempre estarão ordenadas pelo valor de i?**
 
 ```
