@@ -25,7 +25,7 @@ Utilizando o GCC, devemos utilizar o comando no terminal : gcc proj1.c -o proj1.
 
 **Explicação do código:**
 
-Este código implementa uma possível solução para o problema do jantar dos filósofos utilizando threads em C. O problema dos filósofos jantando é um exemplo de condição de corrida, que ocorre quando vários processos competem por recursos compartilhados.Os filósofos são tratados como theads e os garfos,recursos.
+Este código implementa uma possível solução para o problema do jantar dos filósofos utilizando threads em C. O problema dos filósofos jantando é um exemplo de condição de corrida, que ocorre quando vários processos competem por recursos compartilhados.Os filósofos são tratados como threads e os garfos,recursos.
 
 Neste código os filósofos(threads) vão ser submetidos a um loop infinito , alternando entre os estados de pensar e tentar comer. Na função "comer", o filósofo tenta pegar os garfos da esquerda e da direita. Se ele conseguir pegar ambos, ele come por um período de tempo fixo antes de devolver os garfos à mesa. Caso contrário, ele devolve qualquer garfo que tenha pegado e continua a pensar.
 
