@@ -36,4 +36,8 @@ int main()
     }
  
     return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aecb1e8718123fc8e6a3987b86fa2328cc22e128
