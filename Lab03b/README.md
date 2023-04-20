@@ -22,13 +22,13 @@ Utilizando o GCC, devemos utilizar o comando no terminal : gcc [NomeDoArquivo].c
 
 **Explicação resumida sobre as diferenças entre os valores atingidos. Quais foram as causas das divergências? Por que elas aconteceram?**
 
-```
-...
-```
+
+Ao implementar este código sem a utilização de mutex , os valores de pi possuem algumas incoerências.Estes problemas ocorrem devido a condição de corrida , em que diferentes threads tentam acessar a mesma variável compartilhada de maneira simultânea.
+
 
 **Implemente uma solução utilizando Mutex e comparece com a anterior. O que mudou? Por quê?**
 
-```
-...
-```
+
+Ao utilizar mutex , as threads acessam a variável compartilhada de forma sequencial e segura , obtendo-se assim resultados precisos.Ao variar o n , ou os números de threads , os resultados obtidos para esta implementação sempre vão estar corretos.
+
 
