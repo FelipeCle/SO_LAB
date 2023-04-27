@@ -76,9 +76,5 @@ void removeElemento(celula **listaEncadeada, int elemento){
 
 **6. Calcule o máximo de elementos possíveis na fila, considerando a memória disponível no computador.**
 ```
-//Função que calcula a quantidade de memória que a celula ocupa.
-int qtdeMemoria(celula *cel){
-    int mem = sizeof(*cel);
-    return mem;
-}
+double mem,memGb,max;
 ```
