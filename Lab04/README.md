@@ -20,21 +20,60 @@ Matheus Marques - 42130727
 Utilizando o GCC, devemos utilizar o comando no terminal : gcc [NomeDoArquivo].c -o [NomeDoArquivo].out
 ```
 
-```
 **1. Considerando a estrutura de dados celula, crie três instâncias do objeto célula (três valores na lista);**
 ```
+insere(&listaEncadeada, 0);
+insere(&listaEncadeada, 1);
+insere(&listaEncadeada, 2);
 ```
+
 **2. Construa uma função que imprima todos os valores da lista;**
 ```
+void imprime(celula *listaEncadeada){
+    if (listaEncadeada!=NULL){
+        printf("%d \n",listaEncadeada->conteudo);
+        imprime(listaEncadeada->prox);
+    }
+}
 ```
+
 **3. Calcule a quantidade de memória gasta por cada instância da célula;**
 ```
+int qtdeMemoria(celula *cel){
+    int mem = sizeof(*cel);
+    return mem;
+}
 ```
+
 **4. Construa uma função que remove os elementos da lista;**
-```
-```
 **5. Incremente sua função liberando a memória quando um elemento é liberado;**
 ```
+void removeElemento(celula **listaEncadeada, int elemento){
+    celula *atual = *listaEncadeada;
+    celula *anterior = NULL;
+
+    while (atual != NULL && atual->conteudo != elemento) {
+        anterior = atual;
+        atual = atual->prox;
+    }
+
+    if (atual != NULL) {
+        if (anterior == NULL) {
+            *listaEncadeada = atual->prox;
+        } else {
+            anterior->prox = atual->prox;
+        }
+
+        free(atual);
+    }
+}
 ```
+
 **6. Calcule o máximo de elementos possíveis na fila, considerando a memória disponível no computador.**
+```
+//Função que calcula a quantidade de memória que a celula ocupa.
+int qtdeMemoria(celula *cel){
+    int mem = sizeof(*cel);
+    return mem;
+}
 ```
