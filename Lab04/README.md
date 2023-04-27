@@ -77,4 +77,11 @@ void removeElemento(celula **listaEncadeada, int elemento){
 **6. Calcule o máximo de elementos possíveis na fila, considerando a memória disponível no computador.**
 ```
 double mem,memGb,max;
+    //Recebe a quantidade de memória do pc
+    printf("\nInforme qtdade de Memória disponivel(GB): "); 
+    scanf("%lf", &mem);
+    //Transforma de gb para bytes
+    memGb = mem*1024*1024*1024;
+    //Divide de a memoria do pc pela memória ocupada pela lista.
+    printf("\nQuantidade máxima de elementos = | %.2lf | ",memGb/qtdeMemoria(listaEncadeada));
 ```
