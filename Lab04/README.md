@@ -21,7 +21,7 @@ Utilizando o GCC, devemos utilizar o comando no terminal : gcc [NomeDoArquivo].c
 ```
 
 
-## **Observação: todas as especificações abaixo aparecem no código e são facilmente identificadas por comentários**
+### **Observação: todas as especificações abaixo aparecem no código e são facilmente identificadas por comentários**
 
 
 **1. Considerando a estrutura de dados celula, crie três instâncias do objeto célula (três valores na lista);**
