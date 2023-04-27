@@ -50,6 +50,7 @@ int qtdeMemoria(celula *cel){
 ```
 
 **4. Construa uma função que remove os elementos da lista;**
+
 **5. Incremente sua função liberando a memória quando um elemento é liberado;**
 ```
 void removeElemento(celula **listaEncadeada, int elemento){
