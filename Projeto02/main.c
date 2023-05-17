@@ -14,7 +14,7 @@ conta from, to;
 int valor;
 pthread_mutex_t lock;
 
-void* transferencia(void *arg) {
+void* transferencia1(void *arg) {
   int rc;
 
   rc = pthread_mutex_lock(&lock);
@@ -41,6 +41,43 @@ void* transferencia(void *arg) {
   return NULL;
 }
 
+void* transferencia2(void *arg) {
+  int rc;
+
+  rc = pthread_mutex_lock(&lock);
+  if (rc != 0) {
+    perror("pthread_mutex_lock");
+    exit(EXIT_FAILURE);
+  }
+
+  if (to.saldo >= valor) {
+    to.saldo -= valor;
+    from.saldo += valor;
+  }
+
+  printf("Transferência concluída com sucesso!\n");
+  printf("Saldo de c1: %d\n", from.saldo);
+  printf("Saldo de c2: %d\n", to.saldo);
+
+  rc = pthread_mutex_unlock(&lock);
+  if (rc != 0) {
+    perror("pthread_mutex_unlock");
+    exit(EXIT_FAILURE);
+  }
+
+  return NULL;
+}
+
+
+void* transferencia(void *arg){
+  int random = rand()%2;
+  if(random==1){
+  transferencia1(arg);
+  }
+  transferencia2(arg);
+  return NULL;
+}
+
 int main() {
   void *stack;
   int i;
@@ -56,8 +93,8 @@ int main() {
   from.saldo = 100;
   to.saldo = 100;
 
-  printf("Transferindo 1 para a conta c2\n");
-  valor = 1;
+  printf("Transferindo 1 real para a conta c2\n");
+  valor = 100;
 
   for (i = 0; i < 100; i++) {
     int rc = pthread_create(&threads[i], NULL, transferencia, NULL);
