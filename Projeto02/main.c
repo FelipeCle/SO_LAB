@@ -1,81 +1,60 @@
+#define _GNU_SOURCE
+#include <malloc.h>
+#include <pthread.h>
+#include <sched.h>
+#include <signal.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <pthread.h>
-
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <time.h>
+#include <unistd.h>
 #define FIBER_STACK 1024 * 64
-
+int flag = 0;
 struct c {
   int saldo;
 };
-
 typedef struct c conta;
-
 conta from, to;
 int valor;
 pthread_mutex_t lock;
 
-void* transferencia1(void *arg) {
+void *transferencia(void *arg) {
   int rc;
-
   rc = pthread_mutex_lock(&lock);
-  if (rc != 0) {
-    perror("pthread_mutex_lock");
-    exit(EXIT_FAILURE);
-  }
-
-  if (from.saldo >= valor) {
+  if ((from.saldo >= valor) && (flag == 0)) {
     from.saldo -= valor;
     to.saldo += valor;
+    if (from.saldo < 0) {
+      to.saldo -= valor;
+      from.saldo += valor;
+    }
+
+    if (from.saldo == 0) {
+      flag = 1;
+    }
   }
 
-  printf("Transferência concluída com sucesso!\n");
-  printf("Saldo de c1: %d\n", from.saldo);
-  printf("Saldo de c2: %d\n", to.saldo);
-
-  rc = pthread_mutex_unlock(&lock);
-  if (rc != 0) {
-    perror("pthread_mutex_unlock");
-    exit(EXIT_FAILURE);
-  }
-
-  return NULL;
-}
-
-void* transferencia2(void *arg) {
-  int rc;
-
-  rc = pthread_mutex_lock(&lock);
-  if (rc != 0) {
-    perror("pthread_mutex_lock");
-    exit(EXIT_FAILURE);
-  }
-
-  if (to.saldo >= valor) {
+  if ((to.saldo >= valor) && (flag == 1)) {
     to.saldo -= valor;
     from.saldo += valor;
+    if (to.saldo < 0) {
+      from.saldo -= valor;
+      to.saldo += valor;
+    }
+    if (to.saldo == 0) {
+      flag = 0;
+    }
   }
 
-  printf("Transferência concluída com sucesso!\n");
-  printf("Saldo de c1: %d\n", from.saldo);
-  printf("Saldo de c2: %d\n", to.saldo);
+  printf("Transferência concluída com sucesso!\nSaldo de c1: $%d\nSaldo de c2: "
+         "$%d\n",
+         from.saldo, to.saldo);
 
+  
   rc = pthread_mutex_unlock(&lock);
-  if (rc != 0) {
-    perror("pthread_mutex_unlock");
-    exit(EXIT_FAILURE);
-  }
-
-  return NULL;
-}
-
-
-void* transferencia(void *arg){
-  int random = rand()%2;
-  if(random==1){
-  transferencia1(arg);
-  }
-  transferencia2(arg);
-  return NULL;
+  return 0;
 }
 
 int main() {
@@ -93,8 +72,8 @@ int main() {
   from.saldo = 100;
   to.saldo = 100;
 
-  printf("Transferindo 1 real para a conta c2\n");
-  valor = 100;
+  printf("Transferindo 1 para a conta c2\n");
+  valor = 50;
 
   for (i = 0; i < 100; i++) {
     int rc = pthread_create(&threads[i], NULL, transferencia, NULL);
